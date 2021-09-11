@@ -3,7 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit", "MicroRabbit\MicroRabbit.csproj", "{8EF90B97-CE2A-4119-A73A-5B6F425A9774}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservices", "{7484A82B-D177-4426-A51E-B76BD5F43561}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{AC3EAE0E-2183-4774-865C-D79561ED8649}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.Bus", "Infrastructure.Bus", "{15A51ABD-D5BB-49BB-BE6A-745F1F7E80CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure.IoC", "Infrastructure.IoC", "{C6F2605C-0080-4AB3-AE95-7FCB1247EBE5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{5C24D3F0-0AE0-4B87-BA87-5F64B5742E11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroRabbit.Domain.Core", "MicroRabbit.Domain.Core\MicroRabbit.Domain.Core.csproj", "{10B5D82F-9CD1-4F00-ACAA-C45FB142128F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +21,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8EF90B97-CE2A-4119-A73A-5B6F425A9774}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8EF90B97-CE2A-4119-A73A-5B6F425A9774}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8EF90B97-CE2A-4119-A73A-5B6F425A9774}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8EF90B97-CE2A-4119-A73A-5B6F425A9774}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B5D82F-9CD1-4F00-ACAA-C45FB142128F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B5D82F-9CD1-4F00-ACAA-C45FB142128F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B5D82F-9CD1-4F00-ACAA-C45FB142128F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B5D82F-9CD1-4F00-ACAA-C45FB142128F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{10B5D82F-9CD1-4F00-ACAA-C45FB142128F} = {AC3EAE0E-2183-4774-865C-D79561ED8649}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BAE1E01F-5327-46B1-9930-49220F328BD4}
