@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MicroRabbit.Banking.Domain.Models
 {
@@ -10,6 +6,8 @@ namespace MicroRabbit.Banking.Domain.Models
 	{
 		public int Id { get; set; }
 		public string AccountType { get; set; }
+
+		[Column(TypeName = "decimal(12,2)")]
 		public decimal AccountBalance { get; set; }
 	}
 }
