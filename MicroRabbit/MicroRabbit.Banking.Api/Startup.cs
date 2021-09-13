@@ -1,11 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MicroRabbit.Banking.Data.Context;
+using MicroRabbit.Infrastructure.IoC;
 
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,7 +22,21 @@ namespace MicroRabbit.Banking.Api
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
+			services.AddDbContext<BankingDbContext>(options =>
+			{
+				options.UseSqlServer(Configuration.GetConnectionString("BankingDbConnection"));
+			}
+			);
+
 			services.AddRazorPages();
+
+			RegisterServices(services);
+		}
+
+		private void RegisterServices(IServiceCollection services)
+		{
+			//container listing registered services and apps
+			DependencyContainer.RegisterServices(services);
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
