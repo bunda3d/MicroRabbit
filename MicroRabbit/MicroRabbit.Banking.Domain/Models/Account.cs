@@ -2,12 +2,14 @@
 
 namespace MicroRabbit.Banking.Domain.Models
 {
-	public class Account
-	{
-		public int Id { get; set; }
-		public string AccountType { get; set; }
+  public class Account
+  {
+    public int Id { get; set; }
 
-		[Column(TypeName = "decimal(12,2)")]
-		public decimal AccountBalance { get; set; }
-	}
+    [Column(TypeName = "varchar(50)")]
+    public string AccountType { get; set; }
+
+    [Column(TypeName = "decimal(12,2)")]
+    public decimal AccountBalance { get; set; }
+  }
 }

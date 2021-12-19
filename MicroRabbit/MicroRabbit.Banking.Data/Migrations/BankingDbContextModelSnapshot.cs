@@ -29,7 +29,7 @@ namespace MicroRabbit.Banking.Data.Migrations
                         .HasColumnType("decimal(12,2)");
 
                     b.Property<string>("AccountType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 

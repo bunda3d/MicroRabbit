@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MicroRabbit.Banking.Data.Migrations
 {
     [DbContext(typeof(BankingDbContext))]
-    [Migration("20210913012714_Init Migration")]
-    partial class InitMigration
+    [Migration("20211219202246_init migration")]
+    partial class initmigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,7 +31,7 @@ namespace MicroRabbit.Banking.Data.Migrations
                         .HasColumnType("decimal(12,2)");
 
                     b.Property<string>("AccountType")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("varchar(50)");
 
                     b.HasKey("Id");
 
