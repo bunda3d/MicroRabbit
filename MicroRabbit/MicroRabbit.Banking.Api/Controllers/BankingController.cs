@@ -11,33 +11,34 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MicroRabbit.Banking.Api.Controllers
 {
-	[Route("api/[controller]")]
-	[ApiController]
-	public class BankingController : ControllerBase
-	{
-		private readonly IAccountService _accountService;
+  [Route("api/[controller]")]
+  [ApiController]
+  public class BankingController : ControllerBase
+  {
+    private readonly IAccountService _accountService;
 
-		public BankingController(IAccountService accountService)
-		{
-			_accountService = accountService;
-		}
+    public BankingController(IAccountService accountService)
+    {
+      _accountService = accountService;
+    }
 
-		/// <summary>
-		/// Retrieve data of multiple Accounts.
-		/// </summary>
-		[HttpGet]
-		public ActionResult<IEnumerable<Account>> Get()
-		{
-			return Ok(_accountService.GetAccounts());
-		}
+    /// <summary>
+    /// Retrieve data of multiple Accounts.
+    /// </summary>
+    [HttpGet]
+    public ActionResult<IEnumerable<Account>> Get()
+    {
+      return Ok(_accountService.GetAccounts());
+    }
 
-		/// <summary>
-		/// Transfer amount between accounts.
-		/// </summary>
-		[HttpPost]
-		public ActionResult Post([FromBody] AccountTransfer accountTransfer)
-		{
-			return Ok(accountTransfer);
-		}
-	}
+    /// <summary>
+    /// Transfer amount between accounts.
+    /// </summary>
+    [HttpPost]
+    public IActionResult Post([FromBody] AccountTransfer accountTransfer)
+    {
+      _accountService.Transfer(accountTransfer);
+      return Ok(accountTransfer);
+    }
+  }
 }
